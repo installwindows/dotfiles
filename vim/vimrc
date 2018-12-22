@@ -1,5 +1,9 @@
+"set background=dark
+"colorscheme solarized
+set guifont=DejaVu\ Sans\ Mono\ 12
+set antialias
 syntax on
-set number
+set number relativenumber
 set scrolloff=3
 set mouse=a
 "set ruler
@@ -12,44 +16,44 @@ set background=dark
 nnoremap sl :silent .w !pbcopy<CR>
 nnoremap sl :silent .w !pbcopy<CR>
 nnoremap sf :silent %w !pbcopy<CR>
+set title
+set wrap
+set hidden
 
-"ativate indentation
-filetype off
+filetype on
 filetype plugin indent on
 set smartindent
 
-"Non-expanded, 4-wide tabulations
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
 
-"Disable vi-compatibility
 set nocompatible
 
-"Real-world encoding
 set encoding=utf-8
 
-"Interpret modelines in files
 set modelines=1
 
-"Do not abandon buffers
 set hidden
 
-"Don't bother throttling tty
 set ttyfast
 
-"More useful backspace behavior
 set backspace=indent,eol,start
 
-"Use statusbar on all windows
 set laststatus=2
 
-"Better search
 set ignorecase
 set smartcase
 set incsearch
 set showmatch
 set hlsearch
 
-"open file in browser
 nnoremap <F12>f :exe ':silent !firefox %'<CR>
+set splitbelow splitright
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+imap ;; <Esc>
+map ;; <Esc>
