@@ -13,12 +13,10 @@ set tabstop=4
 set shiftwidth=4
 set t_Co=256
 set background=dark
-nnoremap sl :silent .w !pbcopy<CR>
-nnoremap sl :silent .w !pbcopy<CR>
-nnoremap sf :silent %w !pbcopy<CR>
 set title
 set wrap
 set hidden
+set linebreak
 
 filetype on
 filetype plugin indent on
@@ -40,7 +38,7 @@ set ttyfast
 
 set backspace=indent,eol,start
 
-set laststatus=2
+"set laststatus=2
 
 set ignorecase
 set smartcase
@@ -48,7 +46,6 @@ set incsearch
 set showmatch
 set hlsearch
 
-nnoremap <F12>f :exe ':silent !firefox %'<CR>
 set splitbelow splitright
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -57,3 +54,6 @@ map <C-l> <C-w>l
 
 imap ;; <Esc>
 map ;; <Esc>
+
+map <leader>g :Goyo
+map <leader>f :exe ':silent !firefox %'<CR>
