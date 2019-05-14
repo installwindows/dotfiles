@@ -1,9 +1,20 @@
-"set background=dark
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
+	Plug 'tpope/vim-fugitive'
+	Plug 'jonathanfilip/vim-lucius'
+call plug#end()
+"set background=light
 "colorscheme solarized
-set guifont=DejaVu\ Sans\ Mono\ 12
-set antialias
+colorscheme lucius
+LuciusLight
+"set guifont=DejaVu\ Sans\ Mono\ 12
+"set antialias
 syntax on
-set number relativenumber
+"set number relativenumber
 set scrolloff=3
 set mouse=a
 "set ruler
@@ -12,7 +23,6 @@ set pastetoggle=<F5>
 set tabstop=4
 set shiftwidth=4
 set t_Co=256
-set background=dark
 set title
 set wrap
 set hidden
@@ -57,3 +67,5 @@ map ;; <Esc>
 
 map <leader>g :Goyo
 map <leader>f :exe ':silent !firefox %'<CR>
+
+let g:netrw_banner = 0
