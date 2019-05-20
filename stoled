@@ -1,0 +1,112 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'taglist.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'dkprice/vim-easygrep'
+"Plugin 'ervandew/supertab'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tomasr/molokai'
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-easytags'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'klen/python-mode'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'Shougo/neocomplcache.vim'
+"Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'altercation/vim-colors-solarized'
+call vundle#end()
+filetype plugin indent on
+syntax enable 
+let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:syntastic_javascript_checkers = ['jshint']
+"let g:syntastic_python_checkers = ['pylint']
+"let g:syntastic_mode_map = { 'mode': 'passive' }
+"let g:neocomplcache_enable_at_startup = 1
+"let g:solarized_constrast = "high"
+"let g:solarized_visibility = "high"
+set t_Co=256
+"set background=dark
+colorscheme lucius 
+set number
+"let g:easytags_async = 1
+"let g:easytags_file = '.tags'
+set tags=.tags
+let g:molokai_original = 1
+let g:rehash256 = 1
+"match Error /\%81v.\+/
+let NERDTreeIgnore = ['\.lo$', '\.pyc$']
+nnoremap <S-tab> :tabnext<CR>
+nnoremap <C-n> :tabedit<CR>
+nnoremap <S-w> :CtrlPTag<CR>
+nnoremap <C-j> :vnew<CR>
+nnoremap <S-F12> :!ctags -Rf .tags * ../satchmo/* --languages=python --exclude=*.js --exclude=*.html --exclude=*.css --exclude=site-media/*<CR>
+nnoremap <S-F11> :!ctags -Rf .tags src<CR>
+nnoremap <S-F9> :!ctags -Rf .tags sample_nester<CR>
+"nnoremap <S-w> :SyntasticCheck<CR>
+"set foldmethod=indent
+"set foldnestmax=3
+" Make backspace behave as expected
+set backspace=eol,indent,start
+" Move cursor to the matched string
+set incsearch
+" Don't highlight matched strings
+set nohlsearch
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation options
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" The length of a tab
+" This is for documentation purposes only,
+" do not change the default value of 8, ever.
+"set tabstop=8
+"" The number of spaces inserted when you press tab
+"set softtabstop=4
+"" The number of spaces inserted/removed when using < or >
+"set shiftwidth=4
+"" Insert spaces instead of tabs
+"set expandtab
+"" When tabbing manually, use shiftwidth instead of tabstop and softtabstop
+"set smarttab
+" Set basic indenting (i.e. copy the indentation of the previous line)
+" When filetype detection didn't find a fancy indentation scheme
+set autoindent
+set formatoptions-=o
+let g:ctrlp_working_path_mode = 'ra'
+set splitright
+"colorscheme molokai
+function! DoPrettyXML()
+  " save the filetype so we can restore it later
+  let l:origft = &ft
+  set ft=
+  " delete the xml header if it exists. This will
+  " permit us to surround the document with fake tags
+  " without creating invalid xml.
+  1s/<?xml .*?>//e
+  " insert fake tags around the entire document.
+  " This will permit us to pretty-format excerpts of
+  " XML that may contain multiple top-level elements.
+  0put ='<PrettyXML>'
+  $put ='</PrettyXML>'
+  silent %!xmllint --format -
+  " xmllint will insert an <?xml?> header. it's easy enough to delete
+  " if you don't want it.
+  " delete the fake tags
+  2d
+  $d
+  " restore the 'normal' indentation, which is one extra level
+  " too deep due to the extra tags we wrapped around the document.
+  silent %<
+  " back to home
+  1
+  " restore the filetype
+  exe "set ft=" . l:origft
+endfunction
+command! PrettyXML call DoPrettyXML()
+
