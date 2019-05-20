@@ -6,6 +6,8 @@ endif
 call plug#begin()
 	Plug 'tpope/vim-fugitive'
 	Plug 'jonathanfilip/vim-lucius'
+	Plug 'Valloric/YouCompleteMe'
+	Plug 'junegunn/goyo.vim'
 call plug#end()
 "set background=light
 "colorscheme solarized
@@ -15,6 +17,7 @@ LuciusLight
 "set antialias
 syntax on
 "set number relativenumber
+set number
 set scrolloff=3
 set mouse=a
 "set ruler
@@ -69,3 +72,4 @@ map <leader>g :Goyo
 map <leader>f :exe ':silent !firefox %'<CR>
 
 let g:netrw_banner = 0
+set path=$PWD/**
