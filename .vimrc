@@ -8,11 +8,19 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     "Edit surroundings: parentheses, brackets, quotes, XML tags, and more
     Plug 'tpope/vim-surround'
+    "Comment stuff out
+    Plug 'tpope/vim-commentary'
     "Detect indent
     "Plug 'tpope/vim-sleuth'
-    "Color sheme
+    "Color scheme
     Plug 'jonathanfilip/vim-lucius'
     Plug 'jnurmine/Zenburn'
+    Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'morhetz/gruvbox'
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'rakr/vim-one'
+    Plug 'ayu-theme/ayu-vim'
+    Plug 'lifepillar/vim-solarized8'
     "Auto complete
     Plug 'Valloric/YouCompleteMe'
     "Text and only text
@@ -21,13 +29,23 @@ call plug#begin()
     Plug 'nvie/vim-flake8'
     "Django syntax highlighting
     Plug 'tweekmonster/django-plus.vim'
+    Plug 'Chiel92/vim-autoformat'
 call plug#end()
 "set background=light
 "colorscheme solarized
-set t_Co=256
-colorscheme lucius
+"set t_Co=256
+"colorscheme lucius
+" colorscheme palenight
+" set background=dark
+" let g:palenight_terminal_italics=1
 "colorscheme zenburn
-LuciusLight
+"LuciusLight
+" For true colors
+" colorscheme one
+" set background=dark
+colorscheme nord
+let g:nord_italic_comments = 1
+set termguicolors
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set antialias
 syntax on
