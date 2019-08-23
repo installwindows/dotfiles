@@ -21,6 +21,8 @@ call plug#begin()
     Plug 'rakr/vim-one'
     Plug 'ayu-theme/ayu-vim'
     Plug 'lifepillar/vim-solarized8'
+    " Display CSS color
+    Plug 'ap/vim-css-color'
     "Auto complete
     Plug 'Valloric/YouCompleteMe'
     "Text and only text
@@ -30,22 +32,24 @@ call plug#begin()
     "Django syntax highlighting
     Plug 'tweekmonster/django-plus.vim'
     Plug 'Chiel92/vim-autoformat'
+    " Linediff
+    Plug 'AndrewRadev/linediff.vim'
 call plug#end()
+set termguicolors
 "set background=light
 "colorscheme solarized
 "set t_Co=256
-"colorscheme lucius
+colorscheme lucius
+LuciusLight
 " colorscheme palenight
 " set background=dark
 " let g:palenight_terminal_italics=1
 "colorscheme zenburn
-"LuciusLight
 " For true colors
 " colorscheme one
 " set background=dark
-colorscheme nord
-let g:nord_italic_comments = 1
-set termguicolors
+" colorscheme nord
+" let g:nord_italic_comments = 1
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set antialias
 syntax on
