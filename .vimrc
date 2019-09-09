@@ -4,15 +4,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin()
-    "Git integration
+    " Allow .ing plugins actions
+    Plug 'tpope/vim-repeat'
+    " Git integration
     Plug 'tpope/vim-fugitive'
-    "Edit surroundings: parentheses, brackets, quotes, XML tags, and more
+    " Edit surroundings: parentheses, brackets, quotes, XML tags, and more
     Plug 'tpope/vim-surround'
-    "Comment stuff out
+    " Comment stuff out
     Plug 'tpope/vim-commentary'
-    "Detect indent
-    "Plug 'tpope/vim-sleuth'
-    "Color scheme
+    " Color scheme
     Plug 'jonathanfilip/vim-lucius'
     Plug 'jnurmine/Zenburn'
     Plug 'drewtempelmeyer/palenight.vim'
@@ -23,13 +23,13 @@ call plug#begin()
     Plug 'lifepillar/vim-solarized8'
     " Display CSS color
     Plug 'ap/vim-css-color'
-    "Auto complete
+    " Auto complete
     Plug 'Valloric/YouCompleteMe'
-    "Text and only text
+    " No distractions
     Plug 'junegunn/goyo.vim'
-    "PEP8 syntax checker
+    " PEP8 syntax checker
     Plug 'nvie/vim-flake8'
-    "Django syntax highlighting
+    " Django syntax highlighting
     Plug 'tweekmonster/django-plus.vim'
     Plug 'Chiel92/vim-autoformat'
     " Linediff
@@ -53,12 +53,10 @@ LuciusLight
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set antialias
 syntax on
-"set number relativenumber
-set number
+set relativenumber
 set scrolloff=3
 set mouse=a
 set ruler
-"set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}\ %{SleuthIndicator()}\ %=%-14.(%l,%c%V%)\ %P
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 "set colorcolumn=80
 set pastetoggle=<F5>
