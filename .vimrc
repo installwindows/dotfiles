@@ -53,7 +53,7 @@ LuciusLight
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set antialias
 syntax on
-set relativenumber
+set number relativenumber
 set scrolloff=3
 set mouse=a
 set ruler
@@ -66,6 +66,7 @@ set title
 set wrap
 set hidden
 set linebreak
+set tags+=.tags
 
 "filetype on
 filetype plugin indent on
