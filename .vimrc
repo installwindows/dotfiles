@@ -14,12 +14,6 @@ call plug#begin()
     Plug 'tpope/vim-commentary'
     " Color scheme
     Plug 'jonathanfilip/vim-lucius'
-    Plug 'jnurmine/Zenburn'
-    Plug 'drewtempelmeyer/palenight.vim'
-    Plug 'morhetz/gruvbox'
-    Plug 'arcticicestudio/nord-vim'
-    Plug 'rakr/vim-one'
-    Plug 'ayu-theme/ayu-vim'
     Plug 'lifepillar/vim-solarized8'
     " Display CSS color
     Plug 'ap/vim-css-color'
@@ -34,6 +28,8 @@ call plug#begin()
     Plug 'Chiel92/vim-autoformat'
     " Linediff
     Plug 'AndrewRadev/linediff.vim'
+    " Indent motion
+    Plug 'jeetsukumaran/vim-indentwise'
 call plug#end()
 set termguicolors
 "set background=light
@@ -41,15 +37,6 @@ set termguicolors
 "set t_Co=256
 colorscheme lucius
 LuciusLight
-" colorscheme palenight
-" set background=dark
-" let g:palenight_terminal_italics=1
-"colorscheme zenburn
-" For true colors
-" colorscheme one
-" set background=dark
-" colorscheme nord
-" let g:nord_italic_comments = 1
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set antialias
 syntax on
@@ -60,8 +47,10 @@ set ruler
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 "set colorcolumn=80
 set pastetoggle=<F5>
+set expandtab
 set tabstop=4
 set shiftwidth=4
+set smartindent
 set title
 set wrap
 set hidden
@@ -70,12 +59,8 @@ set tags+=.tags
 
 "filetype on
 filetype plugin indent on
-set smartindent
-
-set expandtab
 
 set nocompatible
-
 set encoding=utf-8
 
 set modelines=1
@@ -93,21 +78,25 @@ set showmatch
 set hlsearch
 
 set splitbelow splitright
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-imap ;; <Esc>
-map ;; <Esc>
+inoremap ;; <Esc>
+noremap ;; <Esc>
 
-map <leader>g :Goyo
-map <leader>f :exe ':silent !firefox %'<CR>
-map <leader>y "+y
-map <Leader>d "_d
+nnoremap <leader>g :Goyo
+nnoremap <leader>f :exe ':silent !firefox %'<CR>
+nnoremap <leader>y "+y
+nnoremap <Leader>d "_d
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 let g:netrw_banner = 0
 set path=$PWD/**
 set wildignore+=*.pyc
 set foldmethod=indent
 set foldlevel=99
+
+inoremap <esc> <nop>
