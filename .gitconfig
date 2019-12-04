@@ -1,0 +1,5 @@
+[user]
+	name = Vincent Arnaud
+	email = vincent.arnaud@sculpteo.com
+[core]
+	editor = nvim

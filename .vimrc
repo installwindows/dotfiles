@@ -89,9 +89,11 @@ noremap ;; <Esc>
 nnoremap <leader>g :Goyo
 nnoremap <leader>f :exe ':silent !firefox %'<CR>
 nnoremap <leader>y "+y
-nnoremap <Leader>d "_d
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>d "_d
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>cf :let @+=expand("%")<CR>
+nnoremap <leader>cp :let @+=expand("%:p")<CR>
 
 let g:netrw_banner = 0
 set path=$PWD/**
@@ -99,4 +101,4 @@ set wildignore+=*.pyc
 set foldmethod=indent
 set foldlevel=99
 
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
