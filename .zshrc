@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/var/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -94,12 +94,34 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim=/usr/local/bin/nvim
-alias vi=/usr/local/bin/nvim
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
 alias s1='cd ~/work/integ/co/site_v1'
 alias activate='cd ~/work/integ/ && ./integ.sh activate'
 export EDITOR='nvim'
 
-source /home/var/.profile
+source ~/.profile
+
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+if [ "$(uname -s)" = "Darwin" ]
+then
+	if [ ! -d ~/homebrew ]
+	then
+		mkdir ~/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/homebrew
+	fi
+	export PATH=/Users/varnaud/homebrew/bin:$PATH
+	alias brew=/Users/varnaud/homebrew/bin/brew
+	alias vim=/Users/varnaud/homebrew/bin/nvim
+	alias vi=/Users/varnaud/homebrew/bin/nvim
+	export EMAIL=varnaud@student.42.us.org
+else
+	alias vim=/usr/local/bin/nvim
+	alias vi=/usr/local/bin/nvim
+	alias pbcopy='xsel --clipboard --input'
+	alias pbpaste='xsel --clipboard --output'
+fi
