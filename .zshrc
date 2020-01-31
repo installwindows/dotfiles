@@ -125,3 +125,6 @@ else
 	alias pbcopy='xsel --clipboard --input'
 	alias pbpaste='xsel --clipboard --output'
 fi
+function upload() {
+   curl -F"file=@$1" http://0x0.st 
+}
