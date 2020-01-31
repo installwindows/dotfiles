@@ -31,10 +31,10 @@ call plug#begin()
     " Indent motion
     Plug 'jeetsukumaran/vim-indentwise'
 call plug#end()
-set termguicolors
+"set termguicolors
+set t_Co=256
 "set background=light
 "colorscheme solarized
-"set t_Co=256
 colorscheme lucius
 LuciusLight
 "set guifont=DejaVu\ Sans\ Mono\ 12
