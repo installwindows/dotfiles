@@ -102,3 +102,4 @@ set foldmethod=indent
 set foldlevel=99
 
 "inoremap <esc> <nop>
+let g:ycm_extra_conf_globlist = ['~/projects/c/*']
