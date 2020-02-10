@@ -24,7 +24,7 @@ then
 	alias brew=/Users/varnaud/homebrew/bin/brew
 	alias vim=/Users/varnaud/homebrew/bin/nvim
 	alias vi=/Users/varnaud/homebrew/bin/nvim
-	export EMAIL=varnaud@student.42.us.org
+	export MAIL=varnaud@student.42.us.org
 else
 	alias vim=nvim
 	alias vi=nvim
