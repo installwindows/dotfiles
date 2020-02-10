@@ -83,13 +83,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-inoremap ;; <Esc>
-noremap ;; <Esc>
-
 nnoremap <leader>g :Goyo
 nnoremap <leader>f :exe ':silent !firefox %'<CR>
-nnoremap <leader>y "+y
-nnoremap <leader>d "_d
+noremap <leader>y "+y
+noremap <leader>d "_d
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>cf :let @+=expand("%")<CR>
@@ -101,5 +98,5 @@ set wildignore+=*.pyc
 set foldmethod=indent
 set foldlevel=99
 
-"inoremap <esc> <nop>
-let g:ycm_extra_conf_globlist = ['~/projects/c/*']
+let g:ycm_extra_conf_globlist = ['~/projects/*']
+let g:ycm_always_populate_location_list = 1
