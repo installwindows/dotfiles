@@ -24,13 +24,13 @@ then
 	alias brew=/Users/varnaud/homebrew/bin/brew
 	alias vim=/Users/varnaud/homebrew/bin/nvim
 	alias vi=/Users/varnaud/homebrew/bin/nvim
-	export MAIL=varnaud@student.42.us.org
 else
 	alias vim=nvim
 	alias vi=nvim
 	alias pbcopy='xsel --clipboard --input'
 	alias pbpaste='xsel --clipboard --output'
 fi
+export MAIL=varnaud@student.42.us.org
 
 alias py=ipython
 
