@@ -18,7 +18,9 @@ call plug#begin()
     " Display CSS color
     Plug 'ap/vim-css-color'
     " Auto complete
-    Plug 'Valloric/YouCompleteMe'
+    if stridx($HOME, "com.termux") == -1
+        Plug 'Valloric/YouCompleteMe'
+    endif
     " No distractions
     Plug 'junegunn/goyo.vim'
     " PEP8 syntax checker
