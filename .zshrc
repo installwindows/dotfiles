@@ -1,5 +1,6 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
+export FPATH=$FPATH:/home/var/.config/zsh/completion
 ZSH_THEME="varnaud"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git virtualenv zsh-syntax-highlighting)
@@ -34,4 +35,3 @@ alias py=ipython
 function upload() {
    curl -F"file=@$1" http://0x0.st 
 }
-export FPATH=$FPATH:/home/var/.config/zsh/completion
