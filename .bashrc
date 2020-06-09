@@ -44,3 +44,8 @@ shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o
 se() { du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDITOR ;}
 sv() { vcopy "$(du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf)" ;}
 vf() { fzf | xargs -r -I % $EDITOR % ;}
+
+bind '"\e[A": history-search-backward'
+bind '"\eOA": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\eOB": history-search-forward'

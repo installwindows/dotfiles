@@ -3,15 +3,12 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="varnaud"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git virtualenv zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
 
+source $ZSH/oh-my-zsh.sh
 source ~/.profile
+source ~/.sculpteo_profile
 
 export EDITOR='nvim'
-
-# Sculpteo stuff
-alias s1='cd ~/work/integ/co/site_v1'
-alias activate='cd ~/work/integ/ && ./integ.sh activate'
 
 # Mac/Linux config
 if [ "$(uname -s)" = "Darwin" ]

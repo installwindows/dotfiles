@@ -32,13 +32,14 @@ call plug#begin()
     Plug 'AndrewRadev/linediff.vim'
     " Indent motion
     Plug 'jeetsukumaran/vim-indentwise'
+    Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 "set termguicolors
 set t_Co=256
-"set background=light
 "colorscheme solarized
 colorscheme lucius
-LuciusLight
+set background=light
+"LuciusLight
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set antialias
 syntax on
@@ -49,9 +50,9 @@ set ruler
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 "set colorcolumn=80
 set pastetoggle=<F5>
-set expandtab
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set smartindent
 set title
 set wrap
@@ -97,8 +98,19 @@ nnoremap <leader>cp :let @+=expand("%:p")<CR>
 let g:netrw_banner = 0
 set path=$PWD/**
 set wildignore+=*.pyc
+set wildignore+=**/laposte-templates/**
+set wildignore+=**/amt-templates/**
 set foldmethod=indent
 set foldlevel=99
 
 let g:ycm_extra_conf_globlist = ['~/projects/*']
 let g:ycm_always_populate_location_list = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#EFEBF1   ctermbg=255
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#EEEEEE ctermbg=254
+
