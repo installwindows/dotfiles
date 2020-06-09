@@ -1,9 +1,9 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.30 for var on Thu Nov  7 11:48:06 2019.
-# http://www.jwz.org/xscreensaver/
+# Written by xscreensaver-demo 5.42 for var on Mon May 11 22:55:41 2020.
+# https://www.jwz.org/xscreensaver/
 
-timeout:	0:10:00
-cycle:		0:10:00
+timeout:	7:05:00
+cycle:		0:05:00
 lock:		False
 lockTimeout:	0:00:00
 passwdTimeout:	0:00:30
@@ -23,16 +23,16 @@ fadeSeconds:	0:00:03
 fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
-font:		*-medium-r-*-140-*-m-*
+font:		xft:DejaVu Sans Mono:pixelsize=11
 dpmsEnabled:	False
 dpmsQuickOff:	False
 dpmsStandby:	2:00:00
 dpmsSuspend:	2:00:00
 dpmsOff:	4:00:00
-grabDesktopImages:  False
+grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
-imageDirectory:	
+imageDirectory:	/home/var
 
 mode:		random
 selected:	-1
@@ -41,10 +41,11 @@ textMode:	url
 textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
-textURL:	http://planet.debian.org/rss20.xml
+textURL:	https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Page_au_hasard
 
 programs:								      \
-				maze -root				    \n\
+				maze -root -ignorant -pre-delay 0	      \
+				  -post-delay 10000000			    \n\
 - GL: 				superquadrics -root			    \n\
 				attraction -root			    \n\
 				blitspin -root				    \n\
@@ -54,14 +55,14 @@ programs:								      \
 				imsmap -root				    \n\
 -				noseguy -root				    \n\
 -				pyro -root				    \n\
-				qix -root				    \n\
+-				qix -root				    \n\
 -				rocks -root				    \n\
 				rorschach -root				    \n\
 				decayscreen -root			    \n\
-				flame -root				    \n\
+-				flame -root				    \n\
 -				halo -root				    \n\
 				slidescreen -root			    \n\
-				pedal -root				    \n\
+-				pedal -root				    \n\
 				bouboule -root				    \n\
 -				braid -root				    \n\
 				coral -root				    \n\
@@ -194,7 +195,7 @@ programs:								      \
 - GL: 				mirrorblob -root			    \n\
 				piecewise -root				    \n\
 - GL: 				polytopes -root				    \n\
--				pong -root				    \n\
+				pong -root				    \n\
 				popsquares -root			    \n\
 - GL: 				surfaces -root				    \n\
 -				xanalogtv -root				    \n\
@@ -209,7 +210,7 @@ programs:								      \
 - GL: 				noof -root				    \n\
 				pacman -root				    \n\
 - GL: 				pinion -root				    \n\
-- GL: 				polyhedra -root				    \n\
+  GL: 				polyhedra -root				    \n\
 - GL: 				providence -root			    \n\
 				substrate -root				    \n\
 				wormhole -root				    \n\
@@ -252,6 +253,31 @@ programs:								      \
 - GL: 				projectiveplane -root			    \n\
 -				tessellimage -root			    \n\
 - GL: 				winduprobot -root			    \n\
+				binaryring -root			    \n\
+  GL: 				cityflow -root				    \n\
+  GL: 				geodesicgears -root			    \n\
+  GL: 				romanboy -root				    \n\
+  GL: 				splitflap -root				    \n\
+  GL: 				cubestack -root				    \n\
+  GL: 				cubetwist -root				    \n\
+  GL: 				discoball -root				    \n\
+  GL: 				dymaxionmap -root			    \n\
+  GL: 				energystream -root			    \n\
+  GL: 				hexstrut -root				    \n\
+  GL: 				hydrostat -root				    \n\
+  GL: 				raverhoop -root				    \n\
+  GL: 				splodesic -root				    \n\
+  GL: 				unicrud -root				    \n\
+  GL: 				esper -root				    \n\
+  GL: 				vigilance -root				    \n\
+  GL: 				crumbler -root				    \n\
+-				filmleader -root			    \n\
+				glitchpeg -root				    \n\
+  GL: 				handsy -root				    \n\
+- GL: 				maze3d -root				    \n\
+  GL: 				peepers -root				    \n\
+  GL: 				razzledazzle -root			    \n\
+				vfeedback -root				    \n\
 
 
 pointerPollTime:    0:00:05
