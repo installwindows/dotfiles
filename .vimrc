@@ -11,7 +11,7 @@ call plug#begin()
     " Edit surroundings: parentheses, brackets, quotes, XML tags, and more
     Plug 'tpope/vim-surround'
     " Comment stuff out
-    Plug 'tpope/vim-commentary'
+    Plug 'tomtom/tcomment_vim'
     " Color scheme
     Plug 'jonathanfilip/vim-lucius'
     Plug 'lifepillar/vim-solarized8'
