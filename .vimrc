@@ -87,7 +87,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nnoremap <leader>g :Goyo
-nnoremap <leader>f :exe ':silent !firefox %'<CR>
+nnoremap <leader>f :exe ':silent !firefox %:p'<CR>
 noremap <leader>y "+y
 noremap <leader>d "_d
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
@@ -108,9 +108,6 @@ let g:ycm_always_populate_location_list = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-
-
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#EFEBF1   ctermbg=255
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#EEEEEE ctermbg=254
-
