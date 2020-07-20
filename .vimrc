@@ -33,6 +33,9 @@ call plug#begin()
     " Indent motion
     Plug 'jeetsukumaran/vim-indentwise'
     Plug 'nathanaelkane/vim-indent-guides'
+    "
+    Plug 'preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 "set termguicolors
 set t_Co=256
