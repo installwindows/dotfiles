@@ -42,7 +42,12 @@ call plug#end()
 set t_Co=256
 "colorscheme solarized
 colorscheme lucius
-set background=light
+let hr = (strftime('%H'))
+if hr >= 8 && hr < 20
+    LuciusLight
+else
+    LuciusDark
+endif
 "LuciusLight
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set antialias
