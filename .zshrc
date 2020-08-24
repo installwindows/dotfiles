@@ -28,6 +28,9 @@ else
 	alias pbcopy='xsel --clipboard --input'
 	alias pbpaste='xsel --clipboard --output'
 fi
+if [[ "$(uname -r)" == *"microsoft"* ]]; then
+    alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
+fi
 export MAIL=varnaud@student.42.us.org
 
 alias py=ipython
