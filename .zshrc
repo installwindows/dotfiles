@@ -1,4 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+DISABLE_AUTO_UPDATE=true
 export ZSH="$HOME/.oh-my-zsh"
 export FPATH=$FPATH:/home/var/.config/zsh/completion
 ZSH_THEME="varnaud"
