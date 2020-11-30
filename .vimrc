@@ -18,9 +18,10 @@ call plug#begin()
     " Display CSS color
     Plug 'ap/vim-css-color'
     " Auto complete
-    if stridx($HOME, "com.termux") == -1
-        Plug 'Valloric/YouCompleteMe'
-    endif
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " if stridx($HOME, "com.termux") == -1
+    "     Plug 'Valloric/YouCompleteMe'
+    " endif
     " No distractions
     Plug 'junegunn/goyo.vim'
     " PEP8 syntax checker
@@ -33,12 +34,20 @@ call plug#begin()
     " Indent motion
     Plug 'jeetsukumaran/vim-indentwise'
     Plug 'nathanaelkane/vim-indent-guides'
+    "
+    Plug 'preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 "set termguicolors
 set t_Co=256
 "colorscheme solarized
 colorscheme lucius
-set background=light
+let hr = (strftime('%H'))
+if hr >= 8 && hr < 20
+    LuciusLight
+else
+    LuciusDark
+endif
 "LuciusLight
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set antialias
@@ -94,6 +103,8 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>cf :let @+=expand("%")<CR>
 nnoremap <leader>cp :let @+=expand("%:p")<CR>
+nnoremap <leader>s :syntax sync fromstart<CR>
+nnoremap <leader>pd oimport pdb; pdb.set_trace()<Esc>
 
 let g:netrw_banner = 0
 set path=$PWD/**
@@ -111,3 +122,45 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#EFEBF1   ctermbg=255
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#EEEEEE ctermbg=254
+
+" CoC configuration
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction

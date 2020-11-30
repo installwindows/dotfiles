@@ -1,4 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+DISABLE_AUTO_UPDATE=true
 export ZSH="$HOME/.oh-my-zsh"
 export FPATH=$FPATH:/home/var/.config/zsh/completion
 ZSH_THEME="varnaud"
@@ -27,6 +28,9 @@ else
 	alias vi=nvim
 	alias pbcopy='xsel --clipboard --input'
 	alias pbpaste='xsel --clipboard --output'
+fi
+if [[ "$(uname -r)" == *"microsoft"* ]]; then
+    alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
 fi
 export MAIL=varnaud@student.42.us.org
 
