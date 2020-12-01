@@ -60,7 +60,7 @@ set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 "set colorcolumn=80
 set pastetoggle=<F5>
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=0
 set expandtab
 set smartindent
 set title

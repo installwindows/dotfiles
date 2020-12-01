@@ -39,3 +39,6 @@ alias py=ipython
 function upload() {
    curl -F"file=@$1" http://0x0.st 
 }
+
+export NVM_DIR="/home/var/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
