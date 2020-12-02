@@ -42,3 +42,5 @@ function upload() {
 
 export NVM_DIR="/home/var/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgreprc"
