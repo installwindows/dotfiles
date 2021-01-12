@@ -1,4 +1,4 @@
---max-columns=150
+--max-columns=250
 
---glob
-!*.svg
+--glob=!*.svg
+--glob=!tags
