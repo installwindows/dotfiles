@@ -165,4 +165,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-let g:coc_node_path = "/home/var/.nvm/versions/node/v14.15.1/bin/node"
+if $SCULPTEO_HOME
+    let g:coc_node_path = "/home/var/.nvm/versions/node/v14.15.1/bin/node"
+endif

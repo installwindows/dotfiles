@@ -8,7 +8,10 @@ plugins=(git virtualenv zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
-source ~/.sculpteo_profile
+if [[ -v $SCULPTEO_HOME ]]
+then
+    source ~/.sculpteo_profile
+fi
 
 export EDITOR='nvim'
 
