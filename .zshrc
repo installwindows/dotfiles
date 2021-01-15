@@ -8,7 +8,7 @@ plugins=(git virtualenv zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
-if [[ -v $SCULPTEO_HOME ]]
+if [[ -f ~/.sculpteo_profile ]]
 then
     source ~/.sculpteo_profile
 fi
