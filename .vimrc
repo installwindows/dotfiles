@@ -38,19 +38,9 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
-"set termguicolors
 set t_Co=256
-"colorscheme solarized
 colorscheme lucius
-let hr = (strftime('%H'))
-if hr >= 8 && hr < 20
-    LuciusLight
-else
-    LuciusDark
-endif
-"LuciusLight
-"set guifont=DejaVu\ Sans\ Mono\ 12
-"set antialias
+LuciusDark
 syntax on
 set number relativenumber
 set scrolloff=3
