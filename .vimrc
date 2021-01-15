@@ -86,7 +86,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nnoremap <leader>g :Goyo
-nnoremap <leader>f :exe ':silent !firefox %:p'<CR>
+nnoremap <leader>f :exe ':silent !firefox %:p &'<CR>
 noremap <leader>y "+y
 noremap <leader>d "_d
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
