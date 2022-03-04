@@ -37,6 +37,7 @@ call plug#begin()
     "
     Plug 'preservim/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'wfxr/minimap.vim'
 call plug#end()
 set t_Co=256
 colorscheme lucius
@@ -156,5 +157,6 @@ function! s:show_documentation()
 endfunction
 
 if $SCULPTEO_HOME
-    let g:coc_node_path = "/home/var/.nvm/versions/node/v14.15.1/bin/node"
+    let g:flake8_cmd="/home/alabate/work/integ/co/site_v1/control enter flake8"
+    autocmd BufRead,BufNewFile *.js,*.html,*.css,*.scss,*.json,*.sh,Dockerfile,*.Dockerfile setlocal noexpandtab
 endif
