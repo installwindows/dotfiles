@@ -38,6 +38,7 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'wfxr/minimap.vim'
+    Plug 'psliwka/vim-smoothie'
 call plug#end()
 set t_Co=256
 colorscheme lucius
@@ -113,6 +114,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#EFEBF1   ctermbg=255
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#EEEEEE ctermbg=254
+
+autocmd BufRead,BufNewFile *.htm,*.html,*.js,*.css,*.scss setlocal noexpandtab
 
 " CoC configuration
 " Use tab for trigger completion with characters ahead and navigate.
