@@ -159,7 +159,7 @@ function! s:show_documentation()
   endif
 endfunction
 
+autocmd BufRead,BufNewFile *.js,*.html,*.css,*.scss,*.json,*.sh,Dockerfile,*.Dockerfile setlocal noexpandtab
 if $SCULPTEO_HOME
     let g:flake8_cmd="/home/alabate/work/integ/co/site_v1/control enter flake8"
-    autocmd BufRead,BufNewFile *.js,*.html,*.css,*.scss,*.json,*.sh,Dockerfile,*.Dockerfile setlocal noexpandtab
 endif
