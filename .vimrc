@@ -15,6 +15,7 @@ call plug#begin()
     " Color scheme
     Plug 'jonathanfilip/vim-lucius'
     Plug 'lifepillar/vim-solarized8'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     " Display CSS color
     Plug 'ap/vim-css-color'
     " Auto complete
@@ -37,12 +38,13 @@ call plug#begin()
     "
     Plug 'preservim/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'wfxr/minimap.vim'
     Plug 'psliwka/vim-smoothie'
 call plug#end()
 set t_Co=256
-colorscheme lucius
-LuciusDark
+" colorscheme lucius
+" LuciusDark
+let g:tokyonight_style = "storm"
+colorscheme tokyonight
 syntax on
 set number relativenumber
 set scrolloff=3
@@ -52,9 +54,9 @@ set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 "set colorcolumn=80
 set pastetoggle=<F5>
 set tabstop=4
-set shiftwidth=0
+set shiftwidth=4
 set expandtab
-set smartindent
+" set smartindent
 set title
 set wrap
 set hidden
@@ -115,7 +117,7 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#EFEBF1   ctermbg=255
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#EEEEEE ctermbg=254
 
-autocmd BufRead,BufNewFile *.htm,*.html,*.js,*.css,*.scss setlocal noexpandtab
+" autocmd BufRead,BufNewFile *.htm,*.html,*.js,*.css,*.scss setlocal noexpandtab
 
 " CoC configuration
 " Use tab for trigger completion with characters ahead and navigate.
