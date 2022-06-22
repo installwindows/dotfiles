@@ -26,24 +26,26 @@ call plug#begin()
     " No distractions
     Plug 'junegunn/goyo.vim'
     " PEP8 syntax checker
-    Plug 'nvie/vim-flake8'
+    " Plug 'nvie/vim-flake8'
     " Django syntax highlighting
     Plug 'tweekmonster/django-plus.vim'
-    Plug 'Chiel92/vim-autoformat'
     " Linediff
     Plug 'AndrewRadev/linediff.vim'
     " Indent motion
     Plug 'jeetsukumaran/vim-indentwise'
-    Plug 'nathanaelkane/vim-indent-guides'
-    "
-    Plug 'preservim/nerdtree'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'psliwka/vim-smoothie'
+
+    Plug 'github/copilot.vim'
 call plug#end()
 set t_Co=256
 " colorscheme lucius
 " LuciusDark
-let g:tokyonight_style = "storm"
+" let g:tokyonight_style = "storm"
+let g:tokyonight_style = "night"
+let g:tokyonight_colors = {
+  \ 'bg_statusline': '#444450',
+  \ 'fg_gutter': '#E8E8E7',
+\ }
+" let g:tokyonight_transparent = 1
 colorscheme tokyonight
 syntax on
 set number relativenumber
