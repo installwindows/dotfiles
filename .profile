@@ -34,5 +34,3 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
-
-eval `keychain --eval --agents ssh id_ed25519`
