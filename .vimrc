@@ -44,7 +44,7 @@ call plug#end()
 if (has("termguicolors"))
     set termguicolors
 endif
-colorscheme catpuccin-frappe
+colorscheme catppuccin-frappe
 syntax on
 set number relativenumber
 set scrolloff=3
