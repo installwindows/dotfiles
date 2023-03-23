@@ -14,12 +14,15 @@ call plug#begin()
     Plug 'tomtom/tcomment_vim'
     " Color scheme
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+    Plug 'jacoborus/tender.vim'
     " Display CSS color
     Plug 'ap/vim-css-color'
     " Auto complete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'neovim/nvim-lspconfig'
-    " Plug 'github/copilot.vim'
+    Plug 'github/copilot.vim'
     " No distractions
     Plug 'junegunn/goyo.vim'
     " Django syntax highlighting
@@ -28,6 +31,8 @@ call plug#begin()
     Plug 'AndrewRadev/linediff.vim'
     " Indent motion
     Plug 'jeetsukumaran/vim-indentwise'
+    " NERDTree
+    Plug 'preservim/nerdtree'
 call plug#end()
 " set t_Co=256
 " let g:tokyonight_style = "night"
@@ -36,7 +41,10 @@ call plug#end()
 "   \ 'fg_gutter': '#E8E8E7',
 " \ }
 " let g:tokyonight_transparent = 1
-colorscheme tokyonight-storm
+if (has("termguicolors"))
+    set termguicolors
+endif
+colorscheme catpuccin-frappe
 syntax on
 set number relativenumber
 set scrolloff=3
@@ -252,3 +260,14 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " " Resume latest coc list.
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" NERDTree config
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
