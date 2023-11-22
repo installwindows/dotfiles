@@ -10,6 +10,8 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     " Edit surroundings: parentheses, brackets, quotes, XML tags, and more
     Plug 'tpope/vim-surround'
+    " Vim sugar for the UNIX shell commands that need it the most. Mkdir, Delete, Move, Rename, Chmod, Mkdirp, and more
+    Plug 'tpope/vim-eunuch'
     " Comment stuff out
     Plug 'tomtom/tcomment_vim'
     " Color scheme
@@ -33,6 +35,7 @@ call plug#begin()
     Plug 'jeetsukumaran/vim-indentwise'
     " NERDTree
     Plug 'preservim/nerdtree'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 " set t_Co=256
 " let g:tokyonight_style = "night"
@@ -99,6 +102,7 @@ nnoremap <leader>cf :let @+=expand("%")<CR>
 nnoremap <leader>cp :let @+=expand("%:p")<CR>
 nnoremap <leader>s :syntax sync fromstart<CR>
 nnoremap <leader>pd oimport pdb; pdb.set_trace()<Esc>
+nnoremap <leader>ts oimport time; log.info("Sleep START"); time.sleep(10); log.info("Sleep END")<Esc>
 
 let g:netrw_banner = 0
 set path=$PWD/**

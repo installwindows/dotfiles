@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "python3",
+	"pyright.inlayHints.variableTypes": false,
+	"pyright.inlayHints.functionReturnTypes": false,
+}
